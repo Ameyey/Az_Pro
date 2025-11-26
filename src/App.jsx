@@ -8,6 +8,7 @@ import Not_Found from "./pages/Not_Found"
 import Nabar from "./Component/Nabar"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Footer from "./component/Footer"
 function App() {
   const [location,setLocation]=useState()
   const [opernDropdown, setOpernDropdown] = useState(false);
@@ -47,13 +48,13 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/cart" element={<Card />} />
       <Route path="*" element={<Not_Found />} />
-
-
-
   </Routes>
+  <Footer/>
  </BrowserRouter>
     </>
   )
 }
 
 export default App
+
+// 1:55:45
