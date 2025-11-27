@@ -57,4 +57,19 @@ function App() {
 
 export default App
 
-// 1:55:45
+//2:03:44
+
+// brand : "FashionTrend"
+// category : "women"
+// description : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam."
+// discountedPrice : 135
+// image : "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg"
+// isNew : true
+// oldPrice: "200"
+// price: 150
+// rating : 4
+// size : (3) ['S', 'M', 'L']
+// stock : 50
+// title : "Long sleeve Jacket"
+// type: "jacket"
+// _id:  1

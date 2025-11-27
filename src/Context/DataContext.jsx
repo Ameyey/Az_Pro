@@ -18,7 +18,18 @@ export const DataProvider= ({children})=>{
       }  
   }
 
-  return <DataContext.Provider value={{data , setData ,fetchAllProducts }}>
+  const getUniqueCategory = (data,property)=>{
+      let newVAl = data?.map((curElem)=>{
+        return curElem[property]
+      })
+       return newVAl = ["All",...new Set(newVAl)]
+    }
+  
+    const categoryOnlyData = getUniqueCategory(data,"category")
+    const brandOnlyData=getUniqueCategory(data,"brand")
+    // console.log(categoryOnlyData); 
+
+  return <DataContext.Provider value={{data , setData ,fetchAllProducts  , categoryOnlyData , brandOnlyData}}>
     {children}
   </DataContext.Provider>
 }
