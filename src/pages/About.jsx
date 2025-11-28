@@ -1,6 +1,6 @@
 import React from "react";
 import Products from "./Products";
-import { Navigate ,NavLink }from 'react-router-dom'
+import { Link, Navigate ,NavLink }from 'react-router-dom'
 
 
 const About = () => {
@@ -40,11 +40,10 @@ const About = () => {
         </p>
 
         {/* Button */}
-        <button className="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition" onClick={()=>{
-          alert('d')
-        }}>
+       <Link to={"/products"}><button className="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition" >               
            Explore Products
         </button>
+         </Link>
       </div>
     </div>
   );
