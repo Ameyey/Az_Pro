@@ -24,12 +24,20 @@ export const DataProvider= ({children})=>{
       })
        return newVAl = ["All",...new Set(newVAl)]
     }
+
+  const getBrand_name = (data,property)=>{
+    let newVAl = data?.map((curElem)=>{
+        return curElem[property]
+      })
+       return newVAl = ["All",...new Set(newVAl)]
+  }
   
     const categoryOnlyData = getUniqueCategory(data,"category")
+    const brand_name = getBrand_name(data,"brand")
     const brandOnlyData=getUniqueCategory(data,"brand")
-    // console.log(categoryOnlyData); 
+     console.log(categoryOnlyData); 
 
-  return <DataContext.Provider value={{data , setData ,fetchAllProducts  , categoryOnlyData , brandOnlyData}}>
+  return <DataContext.Provider value={{data  , setData ,fetchAllProducts  , categoryOnlyData , brandOnlyData ,brand_name}}>
     {children}
   </DataContext.Provider>
 }

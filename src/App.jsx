@@ -57,7 +57,7 @@ function App() {
 
 export default App
 
-//2:03:44
+//2:26:27
 
 // brand : "FashionTrend"
 // category : "women"

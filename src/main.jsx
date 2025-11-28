@@ -12,13 +12,11 @@ if (!PUBLISHABLE_KEY) {
 }
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <DataProvider>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <App />
     </ClerkProvider>
     </DataProvider>
-  </StrictMode>,
 )
 
 // 1:49:40
