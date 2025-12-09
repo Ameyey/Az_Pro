@@ -9,7 +9,7 @@ import Lottie from 'lottie-react'
 // import Loading from '' // video type .webm 
 const Loading =null
 function Products() {
-  const {data  ,fetchAllProducts , brand_name}=getData()
+  const {data  ,fetchAllProducts }=getData()
   const [search , setSerach]=useState("")
   const [category , setCategory] = useState("All")
   const [brand ,setBrand]=useState('All')

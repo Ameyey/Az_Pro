@@ -9,6 +9,7 @@ import Nabar from "./Component/Nabar"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Footer from "./component/Footer"
+import Sign_Page_Prodect from "./pages/Sign_Page_Prodect"
 function App() {
   const [location,setLocation]=useState()
   const [opernDropdown, setOpernDropdown] = useState(false);
@@ -44,6 +45,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:id" element={<Sign_Page_Prodect />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/cart" element={<Card />} />
@@ -57,7 +59,7 @@ function App() {
 
 export default App
 
-//2:26:27
+//3:34:43
 
 // brand : "FashionTrend"
 // category : "women"
