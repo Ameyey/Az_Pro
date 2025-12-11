@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Breadcrums from '../component/Breadcrums'
 import { IoCartOutline } from 'react-icons/io5'
+import Loading from '../assets/Loading.json'
 
 function Sign_Page_Prodect() {
   const params = useParams()
@@ -53,7 +54,11 @@ function Sign_Page_Prodect() {
             </div>
           </div>
         </div> :<div className='flex items-center justify-center h-screen'>
-        <h1>Loading...</h1>   
+        <h1>
+          <img src={Loading} alt="Loading" />
+          {/* <img animationData={Loading} classID='w-[500px]' />           */}
+          <h1>Loding</h1>
+        </h1>   
         </div>
       }
     </div>

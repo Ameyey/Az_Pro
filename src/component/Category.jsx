@@ -17,7 +17,6 @@ const Category = () => {
               <div key={index}>
                 <button className='uppercase font-bold shadow-2xl  text-white px-3 py-1 rounded-md cursor-pointer'>{item}</button>
               </div>
-
             )
           })
         }

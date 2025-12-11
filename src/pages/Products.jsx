@@ -5,9 +5,9 @@ import ProductsCard from '../component/ProductsCard'
 import Pagination from '../component/Pagination'
 import Lottie from 'lottie-react'
  import Not_Found from '../assets/Empty box.json'
+ import Loading from '../assets/Loading.json'
 
 // import Loading from '' // video type .webm 
-const Loading =null
 function Products() {
   const {data  ,fetchAllProducts }=getData()
   const [search , setSerach]=useState("")
@@ -84,9 +84,11 @@ function Products() {
       ):(
         <div className='flex items-center justify-center h-[400px]'>
           <video muted autoPlay loop>
-            <source  src={Loading} type='video/webm'/>
-            <h1>No </h1>
+          <img src={Loading} classID='w-[500px]' />
+            <h1>Loading...</h1>
+            {/* <h1>No </h1> */}
           </video>
+          {/* <img src={Loading} alt="" /> */}
         </div>
       )
         }
