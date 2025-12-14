@@ -10,9 +10,11 @@ import { CgClose } from "react-icons/cg";
 import { FaCaretDown } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import { useCart } from "../Context/CardContext";
 
 function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
   // console.log(location)
+  const {cardItem} = useCart()
   const toggleDropdown = () => {
     setOpernDropdown(!opernDropdown);
   };
@@ -108,7 +110,7 @@ function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
           <Link to={"/Card"} className="relative">
             <IoCartOutline className="h-7 w-7" />
             <span className="bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white">
-              0
+              {cardItem.length}
             </span>
           </Link>
           <div>

@@ -48,7 +48,7 @@ function App() {
       <Route path="/products/:id" element={<Sign_Page_Prodect />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/card" element={<Card />} />
+      <Route path="/card" element={<Card  location={location} getLocation={getLocation}/>} />
       <Route path="*" element={<Not_Found />} />
   </Routes>
   <Footer/>
@@ -59,7 +59,7 @@ function App() {
 
 export default App
 
-//3:56:24
+//3:59:09
 
 // brand : "FashionTrend"
 // category : "women"

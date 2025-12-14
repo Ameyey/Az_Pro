@@ -83,7 +83,7 @@ function Products() {
         
       ):(
         <div className='flex items-center justify-center h-[400px]'>
-          <video muted autoPlay loop>
+          <video muted autoPlay loop>cls
           <img src={Loading} classID='w-[500px]' />
             <h1>Loading...</h1>
             {/* <h1>No </h1> */}
