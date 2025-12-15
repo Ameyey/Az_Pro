@@ -4,10 +4,13 @@ import { useParams } from 'react-router-dom'
 import Breadcrums from '../component/Breadcrums'
 import { IoCartOutline } from 'react-icons/io5'
 import Loading from '../assets/Loading.json'
+import Lottie from 'lottie-react'
+import { useCart } from '../Context/CardContext'
 
 function Sign_Page_Prodect() {
   const params = useParams()
   const [ SingleProduct ,setSingleProduct]=useState()
+  const {addToCard} =useCart()
 
   const getSingleProduct = async ()=>{
     try {
@@ -48,16 +51,15 @@ function Sign_Page_Prodect() {
               </div>
 
               <div className='flax gap-4 mt-4'>
-                <button className='px-6 flex gap-2 py-2 text-lg bg-red-500 text-white rounded-md'> <IoCartOutline className='w-7 h-auto'/>  Add to Cart</button>
+                <button onClick={()=>addToCard(SingleProduct)} className='px-6 flex gap-2 py-2 text-lg bg-red-500 text-white rounded-md cursor-pointer' > <IoCartOutline className='w-7 h-auto'/>  Add to Cart</button>
               </div>
 
             </div>
           </div>
         </div> :<div className='flex items-center justify-center h-screen'>
         <h1>
-          <img src={Loading} alt="Loading" />
-          {/* <img animationData={Loading} classID='w-[500px]' />           */}
-          <h1>Loding</h1>
+          {/* <img src={Loading} alt="Loading" /> */}
+          <Lottie animationData={Loading} className="w-[500px]"   />
         </h1>   
         </div>
       }

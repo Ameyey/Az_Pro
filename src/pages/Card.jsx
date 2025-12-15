@@ -5,13 +5,17 @@ import { LuNotebookText } from "react-icons/lu";
 import { MdOutlineDeliveryDining } from "react-icons/md";
 import { GiShoppingBag } from "react-icons/gi";
 import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
+import Loading from "../assets/Loading.json"
+import Lottie from "lottie-react";
 
 function Card({getLocation , location}) {
-  const { cardItem ,updateQuantity } = useCart();
+  const { cardItem ,updateQuantity ,deleteItem } = useCart();
   const [ random , setrandom]=useState(0)
  
-  console.log(cardItem)
   const {user}=useUser()
+
+  const navigate= useNavigate()
   
 
   let Delivery = Math.floor(Math.random()*100.00)
@@ -57,7 +61,7 @@ function Card({getLocation , location}) {
                       <span>{item.quantity}</span>
                       <button onClick={()=>updateQuantity( cardItem, item._id ,"increse" )} className="cursor-pointer" >+</button>
                     </div>
-                    <span className="hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl   ">
+                    <span onClick={()=>deleteItem(item._id)} className="hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl   ">
                       <FaRegTrashAlt className="text-red-500 text-1xl m-2 cursor-pointer" />
                     </span>
                   </div>
@@ -177,7 +181,14 @@ function Card({getLocation , location}) {
           </div>
         </div>
       ) : (
-        <div>Card is empty</div>
+        <>
+
+        <div className="flex flex-col gap-3 justify-center items-center h-[400px] font-bold text-4xl ">
+          <h1 className="text-red-500 text-shadow-2xs ">Oh on! Your cart is empty</h1>
+          <Lottie animationData={Loading} className="w-[320px] " />
+          <button onClick={()=>navigate('/products')} className="text-sm font-bold text-white bg-red-500 px-3 py-2  rounded-2xl shadow-2xs cursor-pointer">Continue Shopping</button>
+          </div>
+          </>
       )}
     </div>
   );

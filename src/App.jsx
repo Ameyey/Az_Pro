@@ -10,6 +10,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Footer from "./component/Footer"
 import Sign_Page_Prodect from "./pages/Sign_Page_Prodect"
+import Category_Products from "./pages/Category_Products"
 function App() {
   const [location,setLocation]=useState()
   const [opernDropdown, setOpernDropdown] = useState(false);
@@ -48,6 +49,7 @@ function App() {
       <Route path="/products/:id" element={<Sign_Page_Prodect />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/category/:category" element={<Category_Products />} />
       <Route path="/card" element={<Card  location={location} getLocation={getLocation}/>} />
       <Route path="*" element={<Not_Found />} />
   </Routes>
@@ -59,7 +61,7 @@ function App() {
 
 export default App
 
-//3:59:09
+//5:06:57
 
 // brand : "FashionTrend"
 // category : "women"
