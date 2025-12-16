@@ -6,6 +6,7 @@ import Pagination from '../component/Pagination'
 import Lottie from 'lottie-react'
  import Not_Found from '../assets/Empty box.json'
  import Loading from '../assets/Loading.json'
+import Mobile_Filter from '../component/Mobile_Filter'
 
 // import Loading from '' // video type .webm 
 function Products() {
@@ -15,6 +16,7 @@ function Products() {
   const [brand ,setBrand]=useState('All')
   const [priceReange ,setPriceReange]= useState([0 ,5000])
   const [page , setpage]=useState(1)
+  const [openFilter , setOpenFilter] = useState(false)
 
   
   useEffect(()=>{
@@ -24,16 +26,19 @@ function Products() {
   const handleCategoryChange =(e)=>{
    setCategory(e.target.value)
          setpage(1)
+         setOpenFilter(false)
 
   }
 
   const handleBrandChange = (e)=>{
    setBrand(e.target.value)
    setpage(1)
+   setOpenFilter(false)
   }
 
   const pageHandler =(selectPage)=>{
       setpage(selectPage)
+      window.scrollTo(0,0)
 
   }
 
@@ -52,6 +57,7 @@ function Products() {
   return (
     <div>
       <div className='max-w-6xl mx-auto px-4 mb-10 '>
+        <Mobile_Filter  openFilter={openFilter} setOpenFilter={setOpenFilter} search={search} setSerach={setSerach} brand={brand}  setBrand={setBrand} priceReange={priceReange} setPriceReange={setPriceReange} category={category} setCategory={setCategory} handleCategoryChange={handleCategoryChange} handleBrandChange={handleBrandChange}  />
         {
       data?.length>0 ? (
         <>
@@ -60,7 +66,7 @@ function Products() {
           {
             filteredData?.length > 0 ? (
               <div className='flex flex-col justify-center items-center'>
-                 <div className='grid grid-cols-4 gap-7 mt-10'>
+                 <div className='grid grid-cols-2  md:grid-cols-4  md:gap-7 mt-10'>
             {
              filteredData?.slice(page * 8-8 ,page * 8).map((product,index)=>{
               return <ProductsCard key={index} product={product} />

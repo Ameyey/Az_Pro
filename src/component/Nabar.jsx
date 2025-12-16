@@ -5,12 +5,14 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 import { MapPin } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { FaCaretDown } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../Context/CardContext";
+import { HiMenu, HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
+import ResponsiveMenu from "./ResponsiveMenu";
 
 function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
   // console.log(location)
@@ -19,8 +21,10 @@ function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
     setOpernDropdown(!opernDropdown);
   };
 
+  const [openNav , setopenNav]=useState(false)
+
   return (
-    <div className="bg-white py-2 shadow-2xl ">
+    <div className="bg-white py-2 shadow-2xl px-4 md:px-0">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         {/* logo  */}
         <div className="flex gap-7 items-center ">
@@ -29,7 +33,7 @@ function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
               <span className="text-red-500 font-serif">A</span>z
             </h1>
           </Link>
-          <div className="flex gap-1 cursor-pointer text-gray-700 items-center text-[16px]">
+          <div className="md:flex gap-1 cursor-pointer text-gray-700 items-center text-[16px] hidden">
             <MapPin className="text-black-500" />
             <span className="font-semibold ">
               {location ? (
@@ -57,7 +61,7 @@ function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
         </div>
         {/* menu section  */}
         <nav className="flex gap-7 items-center">
-          <ul className="flex gap-4 items-center text-[12`px]">
+          <ul className="md:flex gap-4 items-center text-[12px] hidden">
             <NavLink
               to={"/"}
               className={({ isActive }) =>
@@ -113,7 +117,7 @@ function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
               {cardItem.length}
             </span>
           </Link>
-          <div>
+          <div className="hidden md:block">
             <SignedOut>
               <SignInButton className="bg-red-500 text-white py-[7px] px-[16px] rounded-md cursor-pointer" />
             </SignedOut>
@@ -121,8 +125,12 @@ function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
               <UserButton />
             </SignedIn>
           </div>
+          {
+            openNav ? <HiMenuAlt3 onClick={()=>setopenNav(false)} className="h-7 w-7 md:hidden"/>:<HiMenuAlt1  className="h-7 w-7 md:hidden" onClick={()=>setopenNav(true)} />
+          }
         </nav>
       </div>
+      <ResponsiveMenu openNav={openNav} setopenNav={setopenNav} />
     </div>
   );
 }

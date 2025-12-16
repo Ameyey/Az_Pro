@@ -8,7 +8,7 @@ const Category = () => {
  
   return (
     <div className='bg-[#88a2dbcf]'>
-      <div className='max-w-7xl mx-auto flex gap-4 items-center justify-evenly py-4 px-4'>
+      <div className='max-w-7xl mx-auto flex flex-wrap gap-4 items-center  justify-center md:justify-around py-4 px-4'>
         {
           categoryOnlyData?.map((item,index)=>{
             return (

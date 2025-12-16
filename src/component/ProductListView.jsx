@@ -37,22 +37,19 @@ function ProductListView({ product }) {
         <img
           src={product.image}
           alt={product.title}
-          className="h-60 w-50 rounded-md cursor-pointer "
+          className="md:h-60 md:w-50 h-25 w-25  rounded-md cursor-pointer "
           onClick={() => navigate(`/products/${product._id}`)}
         />
         <div className="space-y-2">
           <h1 className="font-bold text-xl line-clamp-3 hover:text-red-500 w-full">
             {product.title}
           </h1>
-          <p className="font-medium">{product.description}</p>
+          <p className="hidden md:block font-medium">{product.description}</p>
           <p className="font-semibold flex items-center text-lg ">
             <span className="text-3xl">{product.price}</span>
             <span className="text-sm">({product.discountedPrice}% off)</span>
           </p>
-          {/* <p className="text-sm font-bold">
-            FREE Delivery Fri,{new Date().toDateString()} <br />
-            Delivery  {new Date(Date.now() + 4 * 24 * 60 * 60 * 1000).toDateString()}
-          </p> */}
+          
           <p className="text-sm ">
             FREE Delivery Fri,{" "}
             <span className="font-semibold"> {new Date().toLocaleDateString("en-IN", {

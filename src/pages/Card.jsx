@@ -12,6 +12,7 @@ import Lottie from "lottie-react";
 function Card({getLocation , location}) {
   const { cardItem ,updateQuantity ,deleteItem } = useCart();
   const [ random , setrandom]=useState(0)
+  // console.log(location)
  
   const {user}=useUser()
 
@@ -26,7 +27,7 @@ function Card({getLocation , location}) {
 
 
   return (
-    <div className="mt-10 max-w-6xl mx-auto mb-5">
+    <div className="mt-10 max-w-6xl mx-auto mb-5 px-4 md:px-0">
       {cardItem.length > 0 ? (
         <div>
           <h1 className="font-bold text-2xl">My Card ({cardItem.length})</h1>
@@ -48,7 +49,7 @@ function Card({getLocation , location}) {
                         <h1 className="font-bold text-1xl text-gray-500">
                           {item.brand}
                         </h1>
-                        <h1 className="w-[300px] line-clamp-2 ">
+                        <h1 className="md:w-[300px] line-clamp-2  ">
                           {item.title}
                         </h1>
                         <p className="text-red-500 font-semibold text-lg">
@@ -68,15 +69,15 @@ function Card({getLocation , location}) {
                 );
               })}
             </div>
-            <div className="grid grid-cols-2 gap-20">
-              <div className="bg-gray-100 rounded-md mt-4 space-y-2 shadow-2xl w-max ">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
+              <div className="bg-gray-100 rounded-md mt-4 space-y-2 shadow-2xl ">
                 <h1 className="text-gray-500 font-bold text-xl p-3 ">
                   Delivery Info
                 </h1>
                 <div className="flex flex-col space-y-1 p-3 ">
                   <label htmlFor="">Full Name</label>
                   <input
-                    value={user.fullName}
+                    value={user?.fullName}
                     type="text"
                     name="FullName"
                     placeholder="Enter a Name"
@@ -88,7 +89,7 @@ function Card({getLocation , location}) {
                   <input
                     type="text"
                     name="Address"
-                    value={`${location.suburb} ${location.town} ${location.state_district} ${location.postcode}. ${location.state} ..`}
+                    value={`${location?.state} ..`}
                     placeholder="Enter a Address"
                     className="text-gray-400 p-2 font-bold rounded-md"
                   />
@@ -97,7 +98,7 @@ function Card({getLocation , location}) {
                   <div className="flex flex-col space-y-1 p-3 w-full">
                     <label htmlFor="">State</label>
                     <input
-                      value={location.state}
+                      value={location?.state}
                       type="text"
                       name="State"
                       placeholder="Enter a State"
@@ -107,7 +108,7 @@ function Card({getLocation , location}) {
                   <div className="flex flex-col space-y-1 p-3 w-full">
                     <label htmlFor="">Post Code</label>
                     <input
-                    value={location.postcode}
+                    value={location?.postcode}
                       type="text"
                       name="PostCode"
                       placeholder="Enter a Post Code"
@@ -119,7 +120,7 @@ function Card({getLocation , location}) {
                   <div className="flex flex-col space-y-1 p-3 w-full">
                     <label htmlFor="">Country</label>
                     <input
-                    value={location.country}
+                    value={location?.country}
                       type="text"
                       name="Country"
                       placeholder="Enter a Country"
@@ -182,7 +183,6 @@ function Card({getLocation , location}) {
         </div>
       ) : (
         <>
-
         <div className="flex flex-col gap-3 justify-center items-center h-[400px] font-bold text-4xl ">
           <h1 className="text-red-500 text-shadow-2xs ">Oh on! Your cart is empty</h1>
           <Lottie animationData={Loading} className="w-[320px] " />

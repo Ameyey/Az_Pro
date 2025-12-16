@@ -5,7 +5,7 @@ import Features_Card from '../component/Features_Card'
 
 function Home() {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <CarouseL />
       <MideBaner />
       <Features_Card/>
