@@ -99,8 +99,11 @@ http://localhost:3000
 ## 📸 Screenshots
 
 > *Add screenshots of Home, Product, and Cart pages here*
+![alt text](<Screenshot 2025-12-16 205000.png>)
 
 ---
+![alt text](<Screenshot 2025-12-16 205105.png>)
+
 
 ## 🚀 Future Improvements
 
