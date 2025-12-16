@@ -1,19 +1,129 @@
-# React + Vite
+# 🛒 React Ecommerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **Ecommerce Web Application** built using **React.js**, **Tailwind CSS**, and **Context API**. This project demonstrates core ecommerce functionality such as product listing, product details, and cart management with a clean, responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Preview
 
-## React Compiler
+> *Add your deployed link here (Vercel / Netlify)*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📌 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 🛍️ Product listing page
+* 🔍 Product details page
+* 🛒 Add to cart & remove from cart
+* ➕ Increase / decrease product quantity
+* 💳 Cart summary
+* 📱 Fully responsive design
+* 🌐 Client-side routing using React Router
+* ⚡ Fast UI with Tailwind CSS
+* 🧠 Global state management using Context API
 
+---
 
-LottieFile they create a view in Create desing come alive with motion
+## 🧰 Tech Stack
+
+* **React.js**
+* **Tailwind CSS**
+* **JavaScript (ES6+)**
+* **Context API**
+* **React Router DOM**
+* **Vite / Create React App**
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│── assets/
+│── components/
+│── context/
+│   └── CartContext.jsx
+│── pages/
+│   ├── Home.jsx
+│   ├── ProductDetails.jsx
+│   └── Cart.jsx
+│── App.jsx
+│── main.jsx / index.js
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Run the project**
+
+```bash
+npm run dev   # For Vite
+# OR
+npm start     # For CRA
+```
+
+4. Open in browser:
+
+```
+http://localhost:5173
+# OR
+http://localhost:3000
+```
+
+---
+
+## 🧠 Learning Outcomes
+
+* Understanding React component structure
+* Managing global state with Context API
+* Working with reusable components
+* Implementing cart logic
+* Using Tailwind CSS for rapid UI development
+
+---
+
+## 📸 Screenshots
+
+> *Add screenshots of Home, Product, and Cart pages here*
+
+---
+
+## 🚀 Future Improvements
+
+* 🔐 User authentication
+* 💳 Payment gateway integration
+* 🔍 Product search & filter
+* ❤️ Wishlist functionality
+* 🧾 Order history
+
+---
+
+## 👨‍💻 Author
+
+**Amey**
+Frontend Developer | React Enthusiast
+GitHub: [https://github.com/your-username](https://github.com/your-username)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+⭐ If you like this project, don’t forget to give it a star!
