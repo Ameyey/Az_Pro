@@ -20,10 +20,10 @@ const ResponsiveMenu = ({ openNav, setOpenNav }) => {
                 </div>
                 <nav className='mt-12'>
                     <ul className='flex flex-col gap-7 text-2xl font-semibold'>
-                        <Link to={'/'}  onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>Home</li></Link>
-                        <Link to={"/products"} onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>Products</li></Link>
-                        <Link to={"/about"} onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>About</li></Link>
-                        <Link to={"/contact"} onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>Contact</li></Link>
+                        <Link to='/'  onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>Home</li></Link>
+                        <Link to="/products" onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>Products</li></Link>
+                        <Link to="/about" onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>About</li></Link>
+                        <Link to="/contact" onClick={()=>setOpenNav(false)} className="cursor-pointer"><li>Contact</li></Link>
                     </ul>
                 </nav>
             </div>
