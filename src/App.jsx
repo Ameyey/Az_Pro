@@ -5,14 +5,15 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Card from "./pages/Card"
 import Not_Found from "./pages/Not_Found"
-import Nabvar from "./Component/Navbar"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Footer from "./component/Footer"
 import Sign_Page_Prodect from "./pages/Sign_Page_Prodect"
 import Category_Products from "./pages/Category_Products"
-import { useCart } from "./Context/CardContext"
 import ProRounter from "./component/ProRounter"
+import Navbar from './component/Navbar'
+import { useCart } from "./Context/CardContext"
+import Navbar1 from "./component/Nabvar1"
 function App() {
   const [location,setLocation]=useState()
   const [opernDropdown, setOpernDropdown] = useState(false);
@@ -56,7 +57,8 @@ function App() {
   return (
     <>
  <BrowserRouter >
-  <Nabvar location ={location} getLocation={getLocation} opernDropdown={opernDropdown} setOpernDropdown={setOpernDropdown} />
+ <Navbar1 location ={location} getLocation={getLocation} opernDropdown={opernDropdown} setOpernDropdown={setOpernDropdown}  />
+  {/* <Navbar location ={location} getLocation={getLocation} opernDropdown={opernDropdown} setOpernDropdown={setOpernDropdown} /> */}
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<Products />} />
