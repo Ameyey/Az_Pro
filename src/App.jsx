@@ -5,7 +5,7 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Card from "./pages/Card"
 import Not_Found from "./pages/Not_Found"
-import Nabar from "./Component/Nabar"
+import Nabvar from "./Component/Navbar"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Footer from "./component/Footer"
@@ -56,7 +56,7 @@ function App() {
   return (
     <>
  <BrowserRouter >
-  <Nabar location ={location} getLocation={getLocation} opernDropdown={opernDropdown} setOpernDropdown={setOpernDropdown} />
+  <Nabvar location ={location} getLocation={getLocation} opernDropdown={opernDropdown} setOpernDropdown={setOpernDropdown} />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<Products />} />

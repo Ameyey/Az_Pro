@@ -14,7 +14,7 @@ import { useCart } from "../Context/CardContext";
 import { HiMenu, HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
 
-function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
+function Navbar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
   // console.log(location)
   const {cardItem} = useCart()
   const toggleDropdown = () => {
@@ -135,4 +135,4 @@ function Nabar({ location , getLocation , opernDropdown ,setOpernDropdown}) {
   );
 }
 
-export default Nabar;
+export default Navbar;
