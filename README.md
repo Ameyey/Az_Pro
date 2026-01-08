@@ -6,7 +6,7 @@ A modern **Ecommerce Web Application** built using **React.js**, **Tailwind CSS*
 
 ## 🚀 Live Preview
 
-> *Add your deployed link here (Vercel / Netlify)*
+> *Add your deployed link here (https://az-pro.vercel.app/)*
 
 ---
 
