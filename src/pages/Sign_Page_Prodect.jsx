@@ -40,7 +40,7 @@ function Sign_Page_Prodect() {
             <div className='flex flex-col gap-6'>
               <h1 className='md:text-4xl font-medium text-gray-800'>{SingleProduct.title}</h1>
               <div className='text-gray-700  font-semibold'>{SingleProduct.brand?.toUpperCase()} / {SingleProduct.category?.toUpperCase()} / {SingleProduct.type?.toUpperCase()}</div>
-              <p className='text-2xl font-bold  text-red-600'>{SingleProduct.price}.0  <span className='text-gray-700 line-through'>{SingleProduct.oldPrice}.0</span>  <span className='bg-red-500 text-white font-mono p-2 py-1 rounded-3xl '>{SingleProduct.discountedPrice}% discount </span> </p>
+              <p className='text-2xl font-bold  text-red-600'>{SingleProduct.price}.0  <span className='text-gray-700 line-through'>{SingleProduct.oldPrice}.0</span>  <span className='bg-red-500 text-white font-mono p-2 py-1 rounded-3xl '>20% discount </span> </p>
               <p className='text-gray-500 font-bold'>{SingleProduct.description}</p>
 
               {/* qunatity selector  */}
